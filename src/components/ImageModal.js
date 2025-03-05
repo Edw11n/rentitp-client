@@ -1,6 +1,6 @@
 import React from 'react';
-const API_URL = process.env.REACT_APP_API_URL;
 import '../styles/images.css';
+const API_URL = process.env.REACT_APP_API_URL;
 
 function ImageModal({ images, currentIndex, onClose, onPrev, onNext }) {
     const rawPath = images[currentIndex] || "";
