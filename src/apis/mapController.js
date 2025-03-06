@@ -4,12 +4,20 @@ const API_URL = process.env.REACT_APP_API_URL;
 // Función para obtener los apartamentos
 const fetchApartments = async () => {
     try {
-        console.log(`API_URL ${API_URL}`);
         const response = await axios.get(`${API_URL}/apartments/getMarkersInfo`);
-        return response.data; // Retorna los datos de los apartamentos
+        const data = response.data;
+
+        console.log("Datos recibidos:", data); // Verifica la estructura de la respuesta
+
+        if (Array.isArray(data)) {
+            return data; // Asegura que sea un array antes de retornarlo
+        } else {
+            console.error("La API no devolvió un array:", data);
+            return []; // Retorna un array vacío si la API no responde como se espera
+        }
     } catch (error) {
-        console.error('Error obteniendo los apartamentos', error);
-        throw error; // Propaga el error
+        console.error("Error obteniendo los apartamentos:", error);
+        return []; // Retorna un array vacío en caso de error
     }
 };
 
