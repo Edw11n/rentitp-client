@@ -29,6 +29,7 @@ function Map() {
         const fetchData = async () => {
             try {
                 const data = await mapController(); // Llama la función de la petición
+                console.log("Datos recibidos:", data);
                 setApartments(data);
             } catch (error) {
                 console.error('Error obteniendo los apartamentos', error);
