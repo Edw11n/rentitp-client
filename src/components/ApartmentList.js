@@ -25,7 +25,7 @@ function ApartmentList() {
     };
 
     fetchApartments();
-    }, [controller, apartmentList]);
+    }, [controller]);
 
     const toggleApartmentDetails = (id) => {
     setSelectedApartment(selectedApartment === id ? null : id);
