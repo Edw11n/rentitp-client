@@ -28,5 +28,5 @@ class ApartmentListController {
         this.loading = false;
     }
 }
-
+}
 export default ApartmentListController;
