@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { UserProvider } from './contexts/UserContext';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
@@ -21,6 +22,7 @@ function App() {
     return (
         <UserProvider>
             <Router>
+                <SpeedInsights />
                 <Navbar 
                     goToJoin={toggleJoin} // Cambia a la función de controlador
                     showAccount={showAccount}
