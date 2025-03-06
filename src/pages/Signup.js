@@ -23,10 +23,6 @@ function Signup() {
         navigate('/');
     };
 
-    const handleChangeUser = (e) => {
-        setUserType(e.target.value); // Actualiza el tipo de usuario seleccionado
-    };
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 

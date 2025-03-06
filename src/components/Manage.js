@@ -13,7 +13,6 @@ const {
     apartmentList,
     fetchApartments,
     editApartmentId,
-    setEditApartmentId,
     editFormData,
     handleEditClick,
     handleInputChange,

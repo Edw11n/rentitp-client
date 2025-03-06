@@ -7,10 +7,10 @@ function Home() {
     return (
         <div className="home-container">
             <div className="map-container">
-                <Map />
+                <Map/>
             </div>
             <div className="apartment-list-container">
-                <ApartmentList />
+                <ApartmentList/>
             </div>
         </div>
     );

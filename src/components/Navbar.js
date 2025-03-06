@@ -3,14 +3,14 @@ import '../styles/navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { UserContext } from '../contexts/UserContext';
-import { useNavigate } from 'react-router-dom';
 
 function Navbar({ goToJoin, setShowAccount }) {
-    const navigate = useNavigate();
     const { user } = useContext(UserContext);
 
-    const goToHome = () => {
-        navigate('/');
+    const handleTitleClick = () => {
+        // Guarda la ubicación del instituto en localStorage antes de recargar
+        localStorage.setItem("mapCenter", JSON.stringify({ lat: 1.157037, lng: -76.651443 }));
+        window.location.reload(); // Recarga la página
     };
 
     const handleUserClick = () => {
@@ -19,7 +19,7 @@ function Navbar({ goToJoin, setShowAccount }) {
 
     return (
         <nav className='navbar'>
-            <h1 className='title' onClick={goToHome}>CampusHousing Mocoa</h1>
+            <h1 className='title' onClick={handleTitleClick}>RentITP</h1>
             {!user ? (
                 <div className='navbar-join'>
                     <p className='navbar-join-click' onClick={goToJoin}>Inicia sesión aquí</p>
